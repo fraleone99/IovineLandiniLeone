@@ -58,8 +58,8 @@ In addition, \emph{DREAM} offers agronomists the possibility of visualizing, mod
 \paragraph{Common user functions} These functions are available to all Users:
 \begin{itemize}
     \item \textbf{Registration and Login}\\
-          Farmer should be able to create a personal account for the App using personal email and password. By logging in with their account, 
-          Farmer can access the other functions.
+          User should be able to create a personal account for the App using personal email and password.
+          By logging in with their account, user can access the other functions.
 \end{itemize}
 
 \paragraph{Basic Farmer functions} These functions are available to all Farmer:
@@ -78,4 +78,36 @@ In addition, \emph{DREAM} offers agronomists the possibility of visualizing, mod
         After access to the forum section of \emph{DREAM}, the farmer can select a recent, not closed discussion and post a reply.
     \item \textbf{Close a discussion}
         A farmer after receiving an effective reply can mark the answer as effective and close the discussion.
+\end{itemize}
+
+\paragraph{Agronomist base functions}
+These functions should be accessible to all logged-in agronomists
+\begin{itemize}
+    \item\textbf{Insert area he is responsible for}\\
+    From the home page, the agronomist can open a geographical representation of Telangana
+    and select the area he is responsible for. \emph{DREAM} checks if the selected territory is already overseen
+    by another agronomist. In that case, the app asks the user to repeat the process;
+    otherwise, the selection is saved on \emph{DREAM's} database.
+    \item \textbf{Reply to forum discussion}\\
+    After access to the forum section of \emph{DREAM}, the agronomist can select a recent,
+    not closed discussion and post a reply.
+    \item \textbf{Reply to help request}\\
+    On receiving a private help request from a farmer, the agronomist receives a
+    notification containing the sender and the problems they need to face.
+    \item \textbf{Visualize information area}\\
+    \emph{DREAM} retrieves meteorological short-term and long-term data from an external source
+    and makes them available to agronomists on the app.
+    \newline In addition, DREAM offers the possibility to the agronomist of visualizing the best
+    performing farmers in his related area; these farmers are selected through thresholds
+    (concerning the production and especially the resilience to meteorological adverse events)
+    created by the agronomist of the corresponding area.
+    \item\textbf{Daily plan management}\\
+    From his personal area, the agronomist can visualize the daily plan on a calendar.
+    The user has three possible choices: add or delete an appointment and confirm the plan;
+    the first two can be repeated several times until the confirmation. In case of deletion of a visit with a given farmer,
+    \emph{DREAM} reinserts automatically the same appointment, according to the agronomist's availability,
+    only if with that farmer there are less than two visits planned for this year.
+    \newline The app suggests to the agronomists the farmers that are under-performing thus need to be visited more often.
+    \newline At the end of each day, the agronomist has to confirm the execution of the daily plan or specify
+    the deviations from that.
 \end{itemize}
