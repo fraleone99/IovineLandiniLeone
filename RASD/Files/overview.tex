@@ -44,3 +44,38 @@ The following diagrams are meant to give a high-level description of the states'
     \caption{Statechart of the lifetime of a farm visit}
     \label{fig:statechart_agronomist_visit}
 \end{figure}
+
+\newpage
+\subsection{Product functions}
+\emph{DREAM} offers Farmers the ability to ask for help from other farmers or an agronomist, 
+they can check the weather forecast and see if there are suggestions for them. 
+\emph{DREAM} create a leaderboard of the farmers that both agronomist and policymakers can visualize. 
+The first ones can discover good practices and help farmers that are performing badly, 
+policymakers instead can see the best farmer, reward them and see if the ones who accepted 
+suggestions are performing better. 
+In addition, \emph{DREAM} offers agronomists the possibility of visualizing, modifying or confirming their daily plan.
+
+\paragraph{Common user functions} These functions are available to all Users:
+\begin{itemize}
+    \item \textbf{Registration and Login}\\
+          Farmer should be able to create a personal account for the App using personal email and password. By logging in with their account, 
+          Farmer can access the other functions.
+\end{itemize}
+
+\paragraph{Basic Farmer functions} These functions are available to all Farmer:
+\begin{itemize}
+    
+    \item \textbf{Check weather forecast}\\
+          \emph{DREAM} retrieves meteorological short-term and long-term data from an external source and makes them available 
+          to farmers. They can check the forecasts on the app and if there are suggestions for their farm these are shown to them.
+           These suggestions are created when an agronomist helps a farmer in a similar situation.
+    \item \textbf{Request help}\\
+          A farmer in case of a problem can ask for the direct help of an agronomist. He can use a section to send a help request,
+           when this functionality is used a notification is sent to the agronomist responsible for the location of the farm with informations about the problem and the farm.
+    \item \textbf{Create discussion on forum}\\
+         \emph{DREAM} has a forum section on which farmers can create a discussion specifying the type of problem and eventual specificity of their farm. 
+    \item \textbf{Reply to forum discussion}
+        After access to the forum section of \emph{DREAM}, the farmer can select a recent, not closed discussion and post a reply.
+    \item \textbf{Close a discussion}
+        A farmer after receiving an effective reply can mark the answer as effective and close the discussion.
+\end{itemize}
