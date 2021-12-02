@@ -59,12 +59,12 @@ In addition, \emph{DREAM} offers agronomists the possibility of visualizing, mod
 \begin{itemize}
     \item \textbf{Registration and Login}\\
           User should be able to create a personal account for the App using personal email and password.
-          By logging in with their account, user can access the other functions.
+          In this process he has to select his role.
+          \newline By logging in with their account, user can access the other functions.
 \end{itemize}
 
-\paragraph{Basic Farmer functions} These functions are available to all Farmer:
+\paragraph{Basic Farmer functions} These functions are available to all logged-in Farmers:
 \begin{itemize}
-    
     \item \textbf{Check weather forecast}\\
           \emph{DREAM} retrieves meteorological short-term and long-term data from an external source and makes them available 
           to farmers. They can check the forecasts on the app and if there are suggestions for their farm these are shown to them.
@@ -78,16 +78,18 @@ In addition, \emph{DREAM} offers agronomists the possibility of visualizing, mod
         After access to the forum section of \emph{DREAM}, the farmer can select a recent, not closed discussion and post a reply.
     \item \textbf{Close a discussion}
         A farmer after receiving an effective reply can mark the answer as effective and close the discussion.
+    \item \textbf{Insert production data}
+    A farmer periodically insert in the app the amount of crops produced, the type and the amount of water used.
 \end{itemize}
 
 \paragraph{Agronomist base functions}
-These functions should be accessible to all logged-in agronomists
+These functions should be accessible to all logged-in Agronomists
 \begin{itemize}
     \item\textbf{Insert area he is responsible for}\\
     From the home page, the agronomist can open a geographical representation of Telangana
     and select the area he is responsible for. \emph{DREAM} checks if the selected territory is already overseen
     by another agronomist. In that case, the app asks the user to repeat the process;
-    otherwise, the selection is saved on \emph{DREAM's} database.
+    otherwise, the selection is saved on \emph{DREAM}'s database.
     \item \textbf{Reply to forum discussion}\\
     After access to the forum section of \emph{DREAM}, the agronomist can select a recent,
     not closed discussion and post a reply.
@@ -97,7 +99,7 @@ These functions should be accessible to all logged-in agronomists
     \item \textbf{Visualize information area}\\
     \emph{DREAM} retrieves meteorological short-term and long-term data from an external source
     and makes them available to agronomists on the app.
-    \newline In addition, DREAM offers the possibility to the agronomist of visualizing the best
+    \newline In addition, \emph{DREAM} offers the possibility to the agronomist of visualizing the best
     performing farmers in his related area; these farmers are selected through thresholds
     (concerning the production and especially the resilience to meteorological adverse events)
     created by the agronomist of the corresponding area.
@@ -110,4 +112,41 @@ These functions should be accessible to all logged-in agronomists
     \newline The app suggests to the agronomists the farmers that are under-performing thus need to be visited more often.
     \newline At the end of each day, the agronomist has to confirm the execution of the daily plan or specify
     the deviations from that.
+    \item\textbf{Insert good practices}\\
+    The agronomist after the visit to a farm can add good practices
+    that will be available to farmers with similar conditions and crops.
 \end{itemize}
+
+\paragraph{Basic Policy maker functions} These functions are available to all logged-in Policy makers:
+\begin{itemize}
+    \item \textbf{Visualize farmers' performance}\\
+    DREAM provides policy makers with a dashboard with comprehensive data about farmers in Telangana.
+    The dashboard shows for each area the farmers that are performing well, the ones who are performing badly,
+    and the ones who are exceeding the thresholds by far (the last ones are those who will receive special incentives).
+    \newline In addition, there is a section that shows the result of farmers who recently received help.
+\end{itemize}
+
+\newpage
+\subsection{User characteristics}
+
+DREAM is meant to be accessible for both specialized and unspecialized users.
+
+\paragraph{Users}
+\begin{itemize}
+    \item \textbf{Farmer}: people that own a farm and may need help
+    \item \textbf{Agronomist}: someone who is specialized in agriculture activity and is responsible for a given area
+    \item \textbf{Policy maker}: people who oversight the agriculture process of Telangana
+\end{itemize}
+
+\bigskip
+\subsection{Assumptions, dependencies and constraints}
+\begin{description}
+    \item[D1] Each user creates only one account
+    \item[D2] The information provided by the farmer is correct
+    \item[D3] The thresholds provided by the agronomists are reasonable for the zone they are responsible for
+    \item[D4] Most of the farmers that receive suggestions will enact them
+    \item[D5] The answers to the forum's threads are consistent
+    \item[D6] A privately help request to an agronomist is replied
+    \item[D7] Users will be instructed to use the application if possible
+    \item[D8] Agronomist is entitled to choose only his area of responsibility
+\end{description}
