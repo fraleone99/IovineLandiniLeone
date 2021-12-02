@@ -1,1 +1,77 @@
-Organize this section according to the rules defined in the project description. 
+\subsection{External interface Requirements}
+\subsection{Functional Requirements}
+\subsubsection{Goal-Requirement mapping}
+\begin{description}
+    \item [G1] Policymakers shall be able to know if steering initiative produced significant results
+        \begin{description}
+            \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
+            \item[R2] The system shall keep track of historical data for each zone
+            \item[R3] The system shall keep track of meteorological events
+            \item[R4] Farmers shall be able to create a help request specifying  the type of problem
+            \item[R5] The system shall be able to record data about production inserted by the farmer
+            \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone   
+        \end{description}
+    \item [G2] Policymakers shall be able to know the best and the worst farmer
+        \begin{description}
+            \item[R2] The system shall keep track of historical data for each zone
+            \item[R3] The system shall keep track of meteorological events
+            \item[R5] The system shall be able to record data about production inserted by the farmer
+            \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone   
+        \end{description}
+    \item [G3] Farmers shall be able to communicate with peers
+        \begin{description}
+            \item[R7] Farmers shall be able to create discussion threads on the forum
+            \item[R8] Farmers shall be able to reply to discussion on the forum
+            \item[R13] The system shall be able to manage a forum
+        \end{description}
+    \item [G4] Farmers shall be able to send an help request to an agronomist
+        \begin{description}
+            \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
+            \item[R4] Farmers shall be able to create a help request specifying  the type of problem
+            \item[R9] The system shall send a notification to the Agronomists when a farmer has requested help
+        \end{description}
+    \item [G5] Farmers shall received personalized suggestions
+        \begin{description}
+            \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
+            \item[R2] The system shall keep track of historical data for each zone
+            \item[R3] The system shall keep track of meteorological events
+            \item[R5] The system shall be able to record data about production inserted by the farmer
+            \item[R6] Agronomists shall be able to insert significant prodution thresholds for each zone
+            \item[R10] After an agronomist has registered a best practice or a suggestion to a farmer, the system should infer the farmers with similar characteristics and send them the same suggestion 
+        \end{description}
+    \item [G6] Farmers shall be able to check weather forecasts
+        \begin{description}
+            \item[R3] The system shall keep track of meteorological events
+            \item[R11] The systems shall be able to connect to an external service to retrieve meteorological forecasts
+            \item[R12] The system shall give Farmer the possibility to see weather forecasts
+        \end{description}
+    \item [G7] Farmers shall be able to add information about production and problems
+        \begin{description}
+            \item[R4] Farmers shall be able to create a help request specifying  the type of problem
+            \item[R5] The system shall be able to record data about production inserted by the farmer
+        \end{description}
+    \item [G8] Farmers shall be able to create discussion on the forum
+        \begin{description}
+            \item[R5] The system shall be able to record data about production inserted by the farmer
+            \item[R13] The system shall be able to manage a forum
+        \end{description}
+    \item [G9] Agronomists shall be able to visualize, confirm and modify their daily plan
+        \begin{description}
+            \item[R14] The system shall be able to record data about visits of agronomists
+            \item[R15] The system shall be able to manage a calendar
+            \item[R16] The system shall organize Agronomists' calendar in such a way that they visit each farm at least twice a year
+        \end{description}
+    \item [G10] Agronomists shall be able to help farmers with problems
+    \begin{description}
+        \item[R4] Farmers shall be able to create a help request specifying  the type of problem
+        \item[R9] The system shall send a notification to the Agronomists when a farmer has requested help
+        \item[R10] After an agronomist has registered a best practice or a suggestion to a farmer, the system should infer the farmers with similar characteristics and send them the same suggestion 
+    \end{description}
+    \item [G11] Agronomists shall be able to know the best and the worst farmer
+    \begin{description}
+        \item[R2] The system shall keep track of historical data for each zone
+        \item[R3] The system shall keep track of meteorological events
+        \item[R5] The system shall be able to record data about production inserted by the farmer
+        \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone   
+    \end{description}
+\end{description}
