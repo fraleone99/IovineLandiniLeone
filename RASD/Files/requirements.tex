@@ -1,4 +1,56 @@
 \subsection{External interface Requirements}
+The \emph{DREAM} frontend is a web application that can be accessed from web browsers, both from mobile and
+desktop devices. The following section will give a comprehensive description in terms of hardware, software
+and communication interfaces.
+
+\subsubsection{Common users interfaces}
+\textbf{Login and Registration}\\
+When first opening the application, all the users are presented with the login page. If not already registered,
+it is provided a registration button. In this section they are asked to provide: first name, second name,
+a \emph{username}, an \emph{e-mail address} and a \emph{password}. The interface also shows a small button to switch
+to the login page, in case the user has already signed in on another device or the session has expired.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{Images/registration.png}
+    \caption{Registration interface}
+\end{figure}
+\pagebreak
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{Images/log-in.png}
+    \caption{Log-in interface}
+\end{figure}
+
+\textbf{Farmer's home page} \\
+Provides different options. The user can insert data concerning production,
+checks weather forecasts, privately request help, and reach the forum.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.45]{Images/farmerHomePage.png}
+    \caption{Farmer's home page}
+\end{figure}
+
+\textbf{Agronomist's home page} \\
+Provides the possibility of selecting the area of responsibility, answering private help requests,
+checking the weather, accessing the forum, managing the daily plan, and checking the dashboard
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{Images/agronomistHomePage.png}
+    \caption{Agronomist's home page}
+\end{figure}
+
+\textbf{Policymaker's home page} \\
+Provides a table containing values for all farmers in the system. Every field of this table can be ordered.
+\newline There are also graphs that sum up data about production.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{Images/policymakerHomePage.png}
+    \caption{Policymaker's home page}
+\end{figure}
+
+
 \subsection{Functional Requirements}
 \subsubsection{Goal-Requirement mapping}
 \begin{description}
@@ -76,6 +128,7 @@
     \end{description}
 \end{description}
 
+\bigskip
 \subsubsection{Scenarios}
 \paragraph{Scenario 1} Daily plan confirmation\\
 Tom is an agronomist that has just finished his work shift, so he logs in to the app and clicks on the daily plan icon.
