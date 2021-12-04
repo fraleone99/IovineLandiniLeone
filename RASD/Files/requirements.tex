@@ -387,3 +387,153 @@ events but overcome the threshold nevertheless.
         \end{itemize} \\ \hline
     \end{tabu}
 \end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Agronomist adds appointment      \\ \hline
+        Actor           & Agronomist                      \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Agronomist is logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Agronomist opens the \emph{"Daily Plan"} section
+            \item The Agronomist is brought to a page with a calendar 
+            \item The Agronomist selects the day that we wants to modify
+            \item The Agronomist presses the \emph{Add appointment} button
+            \item The Agronomist inserts additional information about the visit
+            \item The Agronomist presses the \emph{Confirm} button
+            \item The Agronomist receives confirmation from the server
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The new event is added to the calendar of the agronomist
+            \item Agronomist can see the new event on the calendar
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The day is already full
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Farmer creates forum discussion  \\ \hline
+        Actor           & Farmer                      \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Farmer is logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Farmer opens the \emph{"Forum"} section
+            \item The Farmer is brought to the \emph{"Forum"} page 
+            \item The Farmer presses the \emph{Create Discussion} button
+            \item The Farmer inserts the question and additional information
+            \item The Farmer presses the \emph{Confirm} button
+            \item The Farmer receives confirmation from the server
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The new discussion is added to the forum
+            \item The Farmer can see his question on the forum
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The question is empty
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Farmer inserts data  \\ \hline
+        Actor           & Farmer                      \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Farmer is logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Farmer opens the \emph{Insert Data} section
+            \item The Farmer is brought to the \emph{Insert Data Form} 
+            \item The Farmer compiles the form inserting the type of crop the amount of crop and the amount of water used
+            \item The Farmer presses the \emph{Confirm} button
+            \item The Farmer receives confirmation from the server
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The new production data is added to the database
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The Farmer inserted invalid data
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Agronomist inserts threshold  \\ \hline
+        Actor           & Agronomist                     \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Agronomist is logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Agronomist opens the \emph{Dashboard} section
+            \item The Agronomist is brought to the \emph{Dashboard} page 
+            \item The Agronomist presses on the \emph{insert threshold} button
+            \item The Agronomist is brought to the \emph{Insert Threshold form}
+            \item The Agonomist insert the threshold
+            \item The Agronomist receives confirmation from the server
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The new threshold is added to the database
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The Agronomist inserted invalid data
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Policymaker sees dashboard  \\ \hline
+        Actor           & Policymaker                \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Policymaker is logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Policymaker opens the \emph{Dashboard} section
+            \item The Policymaker is brought to the \emph{Dashboard} page 
+            \item The Policymaker presses on the \emph{water used column} of the table to order the farmer by water used 
+            \item The Policymaker see the table and decides the farmer to reward
+        \end{enumerate} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The Table is empty
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Agronomist replies to help request \\ \hline
+        Actor           & Agronomist                     \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Agronomist is logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Agronomist receives an help request
+            \item The Agronomist open the \emph{Help Request} section
+            \item The Agronomist sees a list of help requests
+            \item The Agronomist select the help request he want to answer
+            \item The Agronomist insert an answer to to problem
+            \item The Agronomist presses \emph{Send} button
+            \item The Agronomist receives confirmation from the server
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The answer is sent to the farmer
+            \item The Agronomist can visualize his answer
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The Agronomist answer is empty
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
