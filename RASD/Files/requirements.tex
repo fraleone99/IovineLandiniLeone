@@ -3,6 +3,7 @@ The \emph{DREAM} frontend is a web application that can be accessed from web bro
 desktop devices. The following section will give a comprehensive description in terms of hardware, software
 and communication interfaces.
 
+\bigskip
 \subsubsection{Common users interfaces}
 \textbf{Login and Registration}\\
 When first opening the application, all the users are presented with the login page. If not already registered,
@@ -10,13 +11,14 @@ it is provided a registration button. In this section they are asked to provide:
 a \emph{username}, an \emph{e-mail address} and a \emph{password}. The interface also shows a small button to switch
 to the login page, in case the user has already signed in on another device or the session has expired.
 
+\bigskip
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.40]{Images/registration.png}
     \caption{Registration interface}
 \end{figure}
-\pagebreak
 
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.40]{Images/log-in.png}
@@ -50,7 +52,35 @@ Provides a table containing values for all farmers in the system. Every field of
     \caption{Policymaker's home page}
 \end{figure}
 
+\newpage
+\textbf{Forum - home page} \\
+The forum section is accessible to both the farmers and the agronomists. Agronomists have the possibility
+of taking a look at the requests and answer to them. Farmers, as agronomists, can answer to the forum threads
+but can also create a new discussion.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{Images/agronomistForum.png}
+    \caption{Agronomist's forum home page}
+\end{figure}
+\bigskip
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{Images/farmerForum.png}
+    \caption{Farmer's forum home page}
+\end{figure}
 
+\newpage
+\textbf{Daily plan - home page} \\
+The daily plan home page presents a calendar in which appointments day are marked in red.
+By clicking on a date is possible to manage it, by adding or removing an appointment.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{Images/dailyplan.png}
+    \caption{Daily plan management home page}
+\end{figure}
+
+
+\bigskip
 \subsection{Functional Requirements}
 \subsubsection{Goal-Requirement mapping}
 \begin{description}
@@ -171,8 +201,7 @@ for the zone of Marty. After Marty's request, he receives a message containing a
 problem of Marty is a serious one so he decides to schedule a visit to his farm through the app functionality.
 
 \bigskip
-\paragraph{Scenario 7} Policymaker checks performance of farmer who received help
-policymaker checks 
+\paragraph{Scenario 7} Policymaker checks performance of farmer who received help\\
 Tom is an official of the Telangana Department of Agriculture, after the recent flood he wants to know how many farmers have requested 
 help and if this help has been effective. He logs in on the website of DREAM and can see the dashboard with some aggregate data. 
 To see which farmers requested help he can select the previous month from the choice box and check which user had requested help, 
