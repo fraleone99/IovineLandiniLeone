@@ -208,3 +208,182 @@ To see which farmers requested help he can select the previous month from the ch
 then he can see if in the current month the users who received help have overcome the thresholds set by the agronomist. He then wants 
 to know who are the best performing farmers so he orders the table to show the users who have the greatest number of meteorological 
 events but overcome the threshold nevertheless.
+
+\subsubsection{Use cases}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & User creates an account \\ \hline
+        Actor           & User                    \\ \hline
+        Entry condition & \begin{itemize}
+            \item The User has not created an account yet
+            \item The User has to be a farmer, an agronomist or a policy maker
+        \end{itemize}  \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The User opens the app
+            \item The app asks for login or registration
+            \item The User clicks on \emph{"Register now"}
+            \item The User inserts his first name, last name, username, e-mail, password and role
+            \item The User clicks on \emph{"Register"}
+            \item The app notifies to User that the registration is confirmed
+        \end{enumerate}  \\ \hline
+        Exit condition  & \begin{itemize}
+            \item User account is added to the database
+            \item The User can login
+        \end{itemize}  \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The User already exists
+        \end{itemize}  \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & User logs in           \\ \hline
+        Actor           & Registered User        \\ \hline
+        Entry condition & \begin{itemize}
+            \item The User has an account
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The User opens the app
+            \item The app asks for login or registration
+            \item The User inserts their username and password
+            \item The User clicks on \emph{"Log-In"}
+            \item The User receives confirmation from the server
+            \item The Customer is brought to the home page
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The User is logged in
+            \item The User can use other features
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The User insert wrong credentials
+            \item The insert username doesn't exist in the app database
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & User checks weather forecasts           \\ \hline
+        Actor           & Agronomist and farmer logged-in    \\ \hline
+        Entry condition & \begin{itemize}
+            \item The User has logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The User presses on \emph{"Weather forecasts"} icon
+            \item The User is brought to the \emph{"Weather forecasts"} page
+            \item The User inserts the interested area and day
+            \item The User visualizes the weather forecasts
+            \item The User can choose to insert another area or return to the homepage
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The User can use other features
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The inserted area doesn't exist
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & User answers forum discussions           \\ \hline
+        Actor           & Agronomist and farmer logged-in    \\ \hline
+        Entry condition & \begin{itemize}
+            \item The User has logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The User presses on \emph{"Forum"} icon
+            \item The User is brought to the \emph{"Forum"} page
+            \item The User scrolls the page and presses on an open discussion
+            \item The User answers using his knowledge
+            \item The app creates an answer with the creator username, the date and the time
+            \item The user can choose to answer another discussion or return to the homepage
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The User can use other features
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The answer is empty
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Farmer asks for help          \\ \hline
+        Actor           & Farmer logged-in   \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Farmer has logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Farmer presses on \emph{"Help request"} icon
+            \item The Farmer is brought to the \emph{"Help request"} page
+            \item The Farmer inserts a brief description of the problem
+            \item The Farmer specify the area in which his farm is located
+            \item The Farmer clicks on \emph{"Send request"}
+            \item The app forwards the request to the agronomist responsible for that area
+            \item The app notify to the Farmer that the request has been sent
+            \item The Farmer is brought to the homepage
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The Farmer can use other features
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The request is empty
+            \item There is no agronomist responsible for that area
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Agronomist selects the area he is responsible for          \\ \hline
+        Actor           & Agronomist logged-in   \\ \hline
+        Entry condition & \begin{itemize}
+            \item The Agronomist has logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The Agronomist press on \emph{"Select your area"} icon
+            \item The Agronomist is brought to the \emph{"Select your area"} page
+            \item The app opens a map of Telangana's State divided by areas 
+            \item The Agronomist press on the area he is responsible for
+            \item The app notify to the Agronomist that the operation was successful
+            \item The Agronomist is brought to the homepage
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The Agronomist can use other features
+            \item The selected area is added to the database
+        \end{itemize} \\ \hline
+        Exceptions      & \begin{itemize}
+            \item The selected area has already been taken
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabu} to \textwidth {|X|X[4]|}
+        \hline
+        Name            & Users logs out        \\ \hline
+        Actor           & Users logged-in   \\ \hline
+        Entry condition & \begin{itemize}
+            \item The User has logged in
+        \end{itemize} \\ \hline
+        Event flow      & \begin{enumerate}
+            \item The User press on \emph{"Settings"} icon
+            \item The User is brought to the \emph{"Settings"} page
+            \item The User press on \emph{"Log-out"} button
+            \item The User is brought to the \emph{"Log-in"} page
+        \end{enumerate} \\ \hline
+        Exit condition  & \begin{itemize}
+            \item The User is logged out
+        \end{itemize} \\ \hline
+    \end{tabu}
+\end{table}
