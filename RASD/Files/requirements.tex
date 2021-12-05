@@ -633,15 +633,39 @@ events but overcome the threshold nevertheless.
 
 \newpage
 \subsection{Performance Requirements}
+Though in these cases time is not critical, the requested performances are:
+\begin{itemize}
+    \item Weather forecasts update must be done within 5 seconds.
+    \item When farmer adds production data on the app, the server should be updated within 15 seconds.
+    \item When someone answers or requests help on the forum, its post need to be add within 10 seconds.
+    \item Daily plan modifications have to be scheduled within 0.5 seconds.
+    \item Private help requests and answers, need to be sent to the receiver within 3 seconds.
+\end{itemize}
+
 
 \subsection{Design constraints}
-\subsubsection{Standards compliance}
-
 \subsubsection{Hardware limitations}
+Running \emph{DREAM} requires a smartphone or computer and a web connection.
 
 \subsection{Software System Attributes}
 \subsubsection{Reliability}
+\emph{DREAM} should be available 24/7, except for maintenance that has to be performed
+only at night and has to last no longer than 2 hours.
+\newline The highest number of simultaneous accesses is expected in the harvest time.
+
 \subsubsection{Availability}
+The system must be available as much as possible; hence, during daytime is required a minimum value of 97\%.
+During the night the availability could be lowered to 95\%.
+
 \subsubsection{Security}
+The most critical problems concerning security are privacy, data integrity and authentication. For instance a
+MITM attack between policymaker and the server could be dangerous for private data. In order to overcome all
+these security problems, the communication between parties should be encrypted through HTTPS protocol.
+
 \subsubsection{Maintainability}
+The system must be designed in such a way that permits future addition of functionalities with minimum effort.
+
 \subsubsection{Portability}
+\emph{DREAM} should be easily deployable on a dedicated machine, on a virtual private server or on a cloud.
+It is in any case usable on every web browser, from every device. The mobile application must be supported by iOS
+and Android.
