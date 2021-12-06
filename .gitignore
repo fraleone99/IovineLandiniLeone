@@ -29,3 +29,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+RASD/Images/AgronomistSelectDataSequence.png.bak
+RASD/Images/ChecksWeatherForecastSequence.png.bak
+RASD/Images/RegistrationSequence.png.bak
+RASD/Images/FarmerinsertsDataSequence.png.bak

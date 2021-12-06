@@ -84,79 +84,80 @@ By clicking on a date is possible to manage it, by adding or removing an appoint
 \subsection{Functional Requirements}
 \subsubsection{Goal-Requirement mapping}
 \begin{description}
-    \item [G1] Policymakers shall be able to know if steering initiative produced significant results
+    \item [G1] The app should help and improve farmers' work-related activity
         \begin{description}
             \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
             \item[R2] The system shall keep track of historical data for each zone
             \item[R3] The system shall keep track of meteorological events
-            \item[R4] Farmers shall be able to create a help request specifying  the type of problem
+            \item[R4] Farmers shall be able to create a help request for the agronomist specifying the type of problem
             \item[R5] The system shall be able to record data about production inserted by the farmer
-            \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone   
-        \end{description}
-    \item [G2] Policymakers shall be able to know the best and the worst farmer
-        \begin{description}
-            \item[R2] The system shall keep track of historical data for each zone
-            \item[R3] The system shall keep track of meteorological events
-            \item[R5] The system shall be able to record data about production inserted by the farmer
-            \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone   
-        \end{description}
-    \item [G3] Farmers shall be able to communicate with peers
-        \begin{description}
             \item[R7] Farmers shall be able to create discussion threads on the forum
             \item[R8] Farmers shall be able to reply to discussion on the forum
-            \item[R13] The system shall be able to manage a forum
-        \end{description}
-    \item [G4] Farmers shall be able to send an help request to an agronomist
-        \begin{description}
-            \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
-            \item[R4] Farmers shall be able to create a help request specifying  the type of problem
             \item[R9] The system shall send a notification to the Agronomists when a farmer has requested help
+            \item[R10] After an agronomist has registered a best practice or a suggestion to a farmer, the system should infer the farmers with similar characteristics and send them the same suggestion
+            \item[R11] The systems shall be able to connect to an external service to retrieve meteorological forecasts
+            \item[R12] The system shall give Farmers the possibility to see weather forecasts
+            \item[R13] The system shall be able to manage a forum
+            \item[R14] The system shall be able to record data about visits of agronomists
+            \item[R17] The system shall give Farmers the possibility to register
+            \item[R18] The system shall give Farmers the possibility to login
+            \item[R19] The system shall give the Farmers the possibilty to visualize personalized suggestion
+            \item[R20] Agronomists shall be able to reply to discussion on the forum
+            \item[R27] Agronomists shall be able to insert best practices discovered during inspections
+            \item[R31] The system shall be able to localize and keep track of each farm 
+ 
+ 
         \end{description}
-    \item [G5] Farmers shall received personalized suggestions
+    \item [G2] The app should allow agronomists to oversee and improve farmers work
         \begin{description}
             \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
             \item[R2] The system shall keep track of historical data for each zone
             \item[R3] The system shall keep track of meteorological events
+            \item[R4] Farmers shall be able to create a help request for the agronomist specifying the type of problem 
             \item[R5] The system shall be able to record data about production inserted by the farmer
-            \item[R6] Agronomists shall be able to insert significant prodution thresholds for each zone
-            \item[R10] After an agronomist has registered a best practice or a suggestion to a farmer, the system should infer the farmers with similar characteristics and send them the same suggestion 
-        \end{description}
-    \item [G6] Farmers shall be able to check weather forecasts
-        \begin{description}
-            \item[R3] The system shall keep track of meteorological events
+            \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone
+            \item[R7] Farmers shall be able to create discussion threads on the forum 
+            \item[R9] The system shall send a notification to the Agronomists when a farmer has requested help
+            \item[R10] After an agronomist has registered a best practice or a suggestion to a farmer, the system should infer the farmers with similar characteristics and send them the same suggestion
             \item[R11] The systems shall be able to connect to an external service to retrieve meteorological forecasts
-            \item[R12] The system shall give Farmer the possibility to see weather forecasts
-        \end{description}
-    \item [G7] Farmers shall be able to add information about production and problems
-        \begin{description}
-            \item[R4] Farmers shall be able to create a help request specifying  the type of problem
-            \item[R5] The system shall be able to record data about production inserted by the farmer
-        \end{description}
-    \item [G8] Farmers shall be able to create discussion on the forum
-        \begin{description}
-            \item[R5] The system shall be able to record data about production inserted by the farmer
             \item[R13] The system shall be able to manage a forum
-        \end{description}
-    \item [G9] Agronomists shall be able to visualize, confirm and modify their daily plan
-        \begin{description}
             \item[R14] The system shall be able to record data about visits of agronomists
             \item[R15] The system shall be able to manage a calendar
             \item[R16] The system shall organize Agronomists' calendar in such a way that they visit each farm at least twice a year
+            \item[R19] The system shall give the Farmers the possibilty to visualize personalized suggestion
+            \item[R20] Agronomists shall be able to reply to discussion on the forum
+            \item[R21] The system shall give Agronomists the possibility to see weather forecasts
+            \item[R22] Agronomists shall be able to add or remove an appointment from daily plan
+            \item[R23] At the end of each day Agronomists shall be able to confirm or communicate deviations from the daily plan
+            \item[R24] The system shall give Agronomists the possibility to register
+            \item[R25] The system shall give Agronomists the possibility to login
+            \item[R26] Agronomists shall be able to visualize farmers' performance through the dashboard
+            \item[R27] Agronomists shall be able to insert best practices discovered during inspections
+            \item[R28] Agronomists shall be able to visualize disussion on the forum
+            \item[R29] The system shall be able to keep track of all the areas and the agronomist responsible for them
+            \item[R30] The system shall give Agronomists the possibility to know every farmer for which he is responsible 
+
+ 
+ 
         \end{description}
-    \item [G10] Agronomists shall be able to help farmers with problems
-    \begin{description}
-        \item[R4] Farmers shall be able to create a help request specifying  the type of problem
-        \item[R9] The system shall send a notification to the Agronomists when a farmer has requested help
-        \item[R10] After an agronomist has registered a best practice or a suggestion to a farmer, the system should infer the farmers with similar characteristics and send them the same suggestion 
-    \end{description}
-    \item [G11] Agronomists shall be able to know the best and the worst farmer
-    \begin{description}
-        \item[R2] The system shall keep track of historical data for each zone
-        \item[R3] The system shall keep track of meteorological events
-        \item[R5] The system shall be able to record data about production inserted by the farmer
-        \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone   
-    \end{description}
+    \item [G3] The app should allow policymakers to control agriculture performance in Telangana
+        \begin{description}
+            \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
+            \item[R2] The system shall keep track of historical data for each zone
+            \item[R3] The system shall keep track of meteorological events
+            \item[R5] The system shall be able to record data about production inserted by the farmer
+            \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone   
+            \item[R14] The system shall be able to record data about visits of agronomists
+            \item[R31] The system shall be able to localize and keep track of each farm  
+            \item[R32] The system shall give Policymakers the possibility to register 
+            \item[R33] The system shall give Policymakers the possibility to login
+            \item[R34] Policymaker shall be able to visualize farmers' performance through the dashboard
+            \item[R35] Policymaker shall be able to visulize data inserted by farmers and agronomists
+            \item[R36] Policymaker shall be able to visualize comparative performance of the farmers who received help
+            \item[R37] The system shall give policymakers the ability to identify well-performing and underperforming farmers    
+        \end{description}
 \end{description}
+
 
 \bigskip
 \subsubsection{Scenarios}
@@ -165,7 +166,6 @@ Tom is an agronomist that has just finished his work shift, so he logs in to the
 The daily appointment with farmers just completed, follows exactly the plan previously determined, so he presses the
 confirmation button.
 
-\bigskip
 \paragraph{Scenario 2} Daily plan modification\\
 Martha is an agronomist that is planning his appointments with farmers. She logs in to DREAM and, from the home page,
 opens the daily plan section; here she decided to remove an appointment planned for the 10th of December selecting the
@@ -174,25 +174,22 @@ selects the 28th of December, and then she presses on the addition icon below: d
 which she can insert information about the appointment to plan (date, time, and the farm that she wants to visit).
 Confirming the operation, she will come back to the daily plan section and the daily plan is updated.
 
-\bigskip
 \paragraph{Scenario 3} Agronomist's area selection\\
 Marvin is an agronomist that has just completed the registration. After the registration and the log in,
 he decides to select his area of responsibility from the map icon on the home page. In this area, a political map of
 Telangana is shown and Marvin selects his responsibility zone. No errors occur so Marvin can select the confirmation
 button and his area is stored.
 
-\bigskip
 \paragraph{Scenario 4} Forum discussion creation\\
 Anthony is a farmer and has problems with soil humidity in his fields, so he decides to post a question on the forum.
 In order to do that, he logs in and clicks on the forum icon. In the forum section, he selects the add discussion icon:
 another section is opened in which he writes his question and post it.
 
-\bigskip
 \paragraph{Scenario 5} Farmer insert data\\
 Jack is a farmer who recently finished collecting his harvest. He opens the app, logs in to the system. On his home page, 
 he selects the Insert Data icon, he now can insert the amount and the type of crop he has harvested and then confirm.
 
-\bigskip
+
 \paragraph{Scenario 6} Farmer Help Request\\
 Marty is a farmer who is having some problems in the cultivation of a crop and because he can't wait for a response on the 
 forum decides to request help from an agronomist. He logs in on the app, selects the request help icon, inserts a brief description 
@@ -200,7 +197,6 @@ of the problem and then confirms that he wants to ask for the help of an agronom
 for the zone of Marty. After Marty's request, he receives a message containing a description of the problem. Victor conveys that the 
 problem of Marty is a serious one so he decides to schedule a visit to his farm through the app functionality.
 
-\bigskip
 \paragraph{Scenario 7} Policymaker checks performance of farmer who received help\\
 Tom is an official of the Telangana Department of Agriculture, after the recent flood he wants to know how many farmers have requested 
 help and if this help has been effective. He logs in on the website of DREAM and can see the dashboard with some aggregate data. 
@@ -208,6 +204,8 @@ To see which farmers requested help he can select the previous month from the ch
 then he can see if in the current month the users who received help have overcome the thresholds set by the agronomist. He then wants 
 to know who are the best performing farmers so he orders the table to show the users who have the greatest number of meteorological 
 events but overcome the threshold nevertheless.
+
+\newpage
 
 \subsubsection{Use cases}
 
@@ -237,6 +235,7 @@ events but overcome the threshold nevertheless.
         \end{itemize}  \\ \hline
     \end{tabu}
 \end{table}
+\newpage
 
 \begin{table}[H]
     \begin{tabu} to \textwidth {|X|X[4]|}
