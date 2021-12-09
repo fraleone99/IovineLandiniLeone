@@ -1,20 +1,25 @@
 abstract sig Account {
-	/*name: one Name,
+	name: one Name,
 	surname: one Surname,
 	username: one Username,
 	email: one Email,
-	password: one Password*/
+	password: one Password
 }
 
-/*sig Name {
+sig Name {
+}{
+	no n : Name | n. ~name  = none
 }
 
 sig Surname {
+}{
+	no s : Surname  | s. ~surname = none
 }
 
 sig Email {}
 {
 	no disj a1, a2 : Account | a1.email = a2.email
+	no e: Email | e. ~email = none
 }
 
 sig Username {}
@@ -23,7 +28,9 @@ sig Username {}
 }
 
 sig Password {
-} */
+} {
+	no p: Password | p. ~password = none
+}
 
 sig Farm {
 	area: one Area
@@ -57,16 +64,17 @@ one sig Forum {
 }
 
 sig Area {
-	farms: some Farm,
+	farms:some Farm,
 }
 
-/*sig PolicyMaker extends Account {
+sig PolicyMaker extends Account {
 	dashboard: one DashBoard,
-}*/
+}
 
 sig Farmer extends Account {
 	farm: one Farm,
-	forumF: one Forum
+	forumF: one Forum,
+	requests : set HelpRequest
 }
 
 sig Agronomist extends Account {
@@ -74,6 +82,12 @@ sig Agronomist extends Account {
 	areas: one Area,
         dashboard: one DashBoard,
 	dailyplan: one DailyPlan
+}
+
+sig HelpRequest{
+	agronomist : one Agronomist
+}{
+	no h: HelpRequest | h. ~requests = none
 }
 
 fact aboutThread {
@@ -106,11 +120,16 @@ fact aboutArea {
 	farms in Area one -> Farm 
 }
 
-/*fun visitArea [ v: Visit , f: Farm] : Area {
+fact aboutDailyPlan{
+	all d:DailyPlan | d.visits.inspection.area = d. ~dailyplan.areas
+}
 
-}*/
+fact aboutHelpRequest{
+	all h: HelpRequest | h.agronomist.areas = h. ~requests.farm.area
+}
 
 pred show {
 }
 
-run show for 4 but 6 Visit, 7 Account, exactly 3 Agronomist
+run show for 4 but exactly 2 Area
+
