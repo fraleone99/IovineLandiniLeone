@@ -37,21 +37,27 @@ sig Password {
 sig Farm {
   area: one Area
 } {
-  #this.~inspection >= 2
+ 	#this.~inspection >= 2
+	no f:Farm | f.~farm = none 
+	no f:Farm | f.~farms_dashboard = none
 }
 
 sig Post {
-} 
+} {
+	no p: Post | p.~posts = none
+}
 
 sig DailyPlan {
   visits: set Visit
-} {
-  #visits>=2
+}{
+	no d:DailyPlan | d.~dailyplan = none
 }
 
 sig Visit {
   inspection: one Farm
-}  
+}  {
+	no v:Visit | v.~visits = none
+}
 
 one sig DashBoard {
   farms_dashboard: set Farm
@@ -59,6 +65,8 @@ one sig DashBoard {
 
 sig Thread {
   posts: some Post,
+} {
+	no  t:Thread| t.~threads = none
 }
 
 one sig Forum {
@@ -66,7 +74,6 @@ one sig Forum {
 }
 
 sig Area {
-  farms:set Farm,
 }
 
 sig PolicyMaker extends Account {
@@ -82,7 +89,7 @@ sig Farmer extends Account {
 sig Agronomist extends Account {
   forumA: one Forum,
   areas: one Area,
-         dashboard: one DashBoard,
+  dashboard: one DashBoard,
   dailyplan: one DailyPlan
 }
 
@@ -94,42 +101,39 @@ sig HelpRequest{
 
 //facts
 fact aboutThread {
-  posts in Thread one -> Post
+	all disj t1,t2: Thread| t1.posts & t2.posts = none
 }
 
 fact aboutDashBoard {
-  farms_dashboard in DashBoard one -> Farm
 }
 
 fact aboutForum {
-  threads in Forum one -> Thread
-  forumA in Agronomist some -> Forum
-  forumF in Farmer  some -> Forum
+
+//  forumA in Agronomist some -> Forum
+//  forumF in Farmer  some -> Forum
 }
 
 fact aboutFarms {
-  visits in DailyPlan one -> Visit
-  farm in Farmer one -> Farm
-  area = ~farms
+	no disj f1,f2: Farmer | f1.farm = f2.farm
 }
 
 fact aboutAgron {
-  areas in Agronomist one -> Area
-  dailyplan in Agronomist one -> DailyPlan
-  visits in DailyPlan one -> Visit
+	no disj a1, a2: Agronomist | a1.areas = a2.areas
+	no disj a1, a2: Agronomist | a1.dailyplan = a2.dailyplan 
+	all disj d1,d2: DailyPlan | (d1.visits=none and d2.visits=none) or (d1.visits & d2.visits = none) 
 }
 
 fact aboutArea {
-  farms in Area one -> Farm 
+	all disj a1,a2: Area |  (a1.~area=none and a2.~area=none) or (a1.~area & a2.~area = none) 
 }
 
 fact aboutDailyPlan{
-  all d:DailyPlan | d.visits.inspection.area = d. ~dailyplan.areas
+	all d:DailyPlan | (d.visits.inspection.area != none) implies (d.visits.inspection.area = d.~dailyplan.areas) 
 }
 
 fact aboutHelpRequest{
   all h: HelpRequest | h.agronomist.areas = h. ~requests.farm.area
-  no disj f1, f2: Farmer | f1.requests = f2.requests
+  all disj f1, f2: Farmer | f1.requests & f2.requests = none
 }
 
 //asserts
@@ -155,20 +159,45 @@ assert dailyPlan {
   }
 }
 
+
 //check dailyPlan for 10
 
 //predicates
+//Daily plan of Agronomists w/ visits to Farmer of their area
 pred world1 {
-  # Account = 5
-  # Agronomist = 2
-  # PolicyMaker = 0
-  # Farmer = 3
+	#Farmer = 3
+	#Agronomist = 2
+	#PolicyMaker = 0
+	#Thread = 0
+	#Post = 0
 }
-run world1 for 6
+//run world1 for 6
 
-/*pred world1 {
-  # Account = 5
-  # Farmer = 3
-  # Agronomist = 2
+//dashboard 
+
+pred world2{
+	#PolicyMaker = 2
+	#Agronomist = 2
+	#Farmer = 1
+	#Visit = 2
 }
-run world1 for 6*/
+
+//run world2 for 5
+//Help to the farmers
+pred world3{
+	#Farmer = 3
+	#Agronomist = 3
+	#PolicyMaker = 0
+	#Thread = 3
+}
+
+//run world3 for 6
+
+//Registration
+pred world4{
+	#Farmer = 1
+	#PolicyMaker = 1
+	#Agronomist = 1
+}
+
+run world4 for 3
