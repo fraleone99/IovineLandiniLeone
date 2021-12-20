@@ -1,0 +1,17 @@
+Here you can see how to include an image in your document.
+
+\begin{sidewaysfigure}
+\centering
+\includegraphics[width=\textwidth]{Images/11.png}
+\caption{\label{fig:metamodel}DICE DPIM metamodel.}
+\end{sidewaysfigure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{Images/11.png}
+\caption{\label{fig:metamodel2}DICE DPIM metamodel in portrait form.}
+\end{figure}
+
+Here is the command to refer to another element (section, figure, table, ...) in the document: \emph{As discussed in Section~\ref{sect:overview} and as shown in Figure~\ref{fig:metamodel}, ...}. Here is how to introduce a bibliographic citation~\cite{DAM}. Bibliographic references should be included in a \texttt{.bib} file. 
+
+Table generation is a bit complicated in Latex. You will soon become proficient, but to start you can rely on tools or external services. See for instance this \href{https://www.tablesgenerator.com}{https://www.tablesgenerator.com}. 
