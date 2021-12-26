@@ -1,5 +1,5 @@
 \subsection{External interface Requirements}
-The \emph{DREAM} frontend is a web application that can be accessed from web browsers, both from mobile and
+The \emph{DREAM} frontend is a web application that can be accessed from web browsers, mobile and
 desktop devices. The following section will give a comprehensive description in terms of hardware, software
 and communication interfaces.
 
@@ -27,7 +27,7 @@ to the login page, in case the user has already signed in on another device or t
 
 \textbf{Farmer's home page} \\
 Provides different options. The user can insert data concerning production,
-checks weather forecasts, privately request help, and reach the forum.
+checks weather forecasts, privately request help, and access the forum.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.45]{Images/farmerHomePage.png}
@@ -55,7 +55,7 @@ Provides a table containing values for all farmers in the system. Every field of
 \newpage
 \textbf{Forum - home page} \\
 The forum section is accessible to both the farmers and the agronomists. Agronomists have the possibility
-of taking a look at the requests and answer to them. Farmers, as agronomists, can answer to the forum threads
+of taking a look at the discussions and answer to them. Farmers, as agronomists, can answer to the forum threads
 but can also create a new discussion.
 \begin{figure}[H]
     \centering
@@ -104,9 +104,7 @@ By clicking on a date is possible to manage it, by adding or removing an appoint
             \item[R19] The system shall give the Farmers the possibilty to visualize personalized suggestion
             \item[R20] Agronomists shall be able to reply to discussion on the forum
             \item[R27] Agronomists shall be able to insert best practices discovered during inspections
-            \item[R31] The system shall be able to localize and keep track of each farm 
- 
- 
+            \item[R31] The system shall be able to localize and keep track of each farm
         \end{description}
     \item [G2] The app should allow agronomists to oversee and improve farmers work
         \begin{description}
@@ -135,10 +133,7 @@ By clicking on a date is possible to manage it, by adding or removing an appoint
             \item[R27] Agronomists shall be able to insert best practices discovered during inspections
             \item[R28] Agronomists shall be able to visualize disussion on the forum
             \item[R29] The system shall be able to keep track of all the areas and the agronomist responsible for them
-            \item[R30] The system shall give Agronomists the possibility to know every farmer for which he is responsible 
-
- 
- 
+            \item[R30] The system shall give Agronomists the possibility to know every farmer for which he is responsible
         \end{description}
     \item [G3] The app should allow policymakers to control agriculture performance in Telangana
         \begin{description}
@@ -193,7 +188,7 @@ he selects the Insert Data icon, he now can insert the amount and the type of cr
 \paragraph{Scenario 6} Farmer Help Request\\
 Marty is a farmer who is having some problems in the cultivation of a crop and because he can't wait for a response on the 
 forum decides to request help from an agronomist. He logs in on the app, selects the request help icon, inserts a brief description 
-of the problem and then confirms that he wants to ask for the help of an agronomist. Victor is one of the agronomists responsible 
+of the problem and then confirms that he wants to ask for the help of an agronomist. Victor is the agronomist responsible
 for the zone of Marty. After Marty's request, he receives a message containing a description of the problem. Victor conveys that the 
 problem of Marty is a serious one so he decides to schedule a visit to his farm through the app functionality.
 
@@ -638,7 +633,7 @@ events but overcome the threshold nevertheless.
 \subsection{Performance Requirements}
 Though in these cases time is not critical, the requested performances are:
 \begin{itemize}
-    \item Weather forecasts update must be done within 5 seconds.
+    \item Weather forecasts update must be done every 5 seconds.
     \item When farmer adds production data on the app, the server should be updated within 15 seconds.
     \item When someone answers or requests help on the forum, its post need to be add within 10 seconds.
     \item Daily plan modifications have to be scheduled within 0.5 seconds.
@@ -654,7 +649,7 @@ Running \emph{DREAM} requires a smartphone or computer and a web connection.
 \subsubsection{Reliability}
 \emph{DREAM} should be available 24/7, except for maintenance that has to be performed
 only at night and has to last no longer than 2 hours.
-\newline The highest number of simultaneous accesses is expected in the harvest time.
+\newline The highest number of simultaneous accesses is expected in the harvest period.
 
 \subsubsection{Availability}
 The system must be available as much as possible; hence, during daytime is required a minimum value of 97\%.

@@ -49,18 +49,17 @@ The following diagrams are meant to give a high-level description of the states'
 \subsection{Product functions}
 \emph{DREAM} offers Farmers the ability to ask for help from other farmers or an agronomist, 
 they can check the weather forecast and see if there are suggestions for them. 
-\emph{DREAM} create a leaderboard of the farmers that both agronomist and policymakers can visualize. 
-The first ones can discover good practices and help farmers that are performing badly, 
-policymakers instead can see the best farmer, reward them and see if the ones who accepted 
-suggestions are performing better. 
+\emph{DREAM} create a dashboard with information about farmers that both agronomist and policymakers can
+visualize. The first ones can set thresholds and both can visualize data concerning the agricultural production of Telangana.
+Especially they can discover which farmers overcame thresholds, and the performance of farmers who received help.
 In addition, \emph{DREAM} offers agronomists the possibility of visualizing, modifying or confirming their daily plan.
 
 \paragraph{Common user functions} These functions are available to all Users:
 \begin{itemize}
     \item \textbf{Registration and Login}\\
-          User should be able to create a personal account for the App using personal email and password.
-          In this process he has to select his role.
-          \newline By logging in with their account, user can access the other functions.
+          Users should be able to create an account on the App using personal email and password.
+          In this process, he has to select his role.
+          \newline By logging in with their account, users can access the other functions.
 \end{itemize}
 
 \paragraph{Basic Farmer functions} These functions are available to all logged-in Farmers:
@@ -94,12 +93,10 @@ These functions should be accessible to all logged-in Agronomists
     After access to the forum section of \emph{DREAM}, the agronomist can select a recent,
     not closed discussion and post a reply.
     \item \textbf{Reply to help request}\\
-    On receiving a private help request from a farmer, the agronomist receives a
-    notification containing the sender and the problems they need to face.
-    \item \textbf{Visualize information area}\\
-    \emph{DREAM} retrieves meteorological short-term and long-term data from an external source
-    and makes them available to agronomists on the app.
-    \newline In addition, \emph{DREAM} offers the possibility to the agronomist of visualizing the best
+    On receiving a private help request from a farmer, the agronomist receives a notification containing the sender
+    and the problems they need to face. He can choose between two options: answer the request or plan a visit.
+    \item \textbf{Visualize dashboard}\\
+    \emph{DREAM} offers the possibility to the agronomist of visualizing the best
     performing farmers in his related area; these farmers are selected through thresholds
     (concerning the production and especially the resilience to meteorological adverse events)
     created by the agronomist of the corresponding area.
@@ -108,22 +105,23 @@ These functions should be accessible to all logged-in Agronomists
     The user has three possible choices: add or delete an appointment and confirm the plan;
     the first two can be repeated several times until the confirmation. In case of deletion of a visit with a given farmer,
     \emph{DREAM} reinserts automatically the same appointment, according to the agronomist's availability,
-    only if with that farmer there are less than two visits planned for this year.
-    \newline The app suggests to the agronomists the farmers that are under-performing thus need to be visited more often.
+    only if with that farmer there are less than two visits planned for that year.
     \newline At the end of each day, the agronomist has to confirm the execution of the daily plan or specify
     the deviations from that.
     \item\textbf{Insert good practices}\\
     The agronomist after the visit to a farm can add good practices
     that will be available to farmers with similar conditions and crops.
+    \item \textbf{Check weather forecast}\\
+    \emph{DREAM} retrieves meteorological short-term and long-term data from an external source and makes them available
+    to agronomists.
 \end{itemize}
 
 \paragraph{Basic Policy maker functions} These functions are available to all logged-in Policy makers:
 \begin{itemize}
     \item \textbf{Visualize farmers' performance}\\
     DREAM provides policy makers with a dashboard with comprehensive data about farmers in Telangana.
-    The dashboard shows for each area the farmers that are performing well, the ones who are performing badly,
-    and the ones who are exceeding the thresholds by far (the last ones are those who will receive special incentives).
-    \newline In addition, there is a section that shows the result of farmers who recently received help.
+    The dashboard shows farmers who are exceeding the thresholds (those will receive special incentives)
+    and who are not.
 \end{itemize}
 
 \newpage
@@ -135,7 +133,7 @@ DREAM is meant to be accessible for both specialized and unspecialized users.
 \begin{itemize}
     \item \textbf{Farmer}: people that own a farm and may need help
     \item \textbf{Agronomist}: someone who is specialized in agriculture activity and is responsible for a given area
-    \item \textbf{Policy maker}: people who oversight the agriculture process of Telangana
+    \item \textbf{Policy maker}: people who oversight the agricultural process of Telangana
 \end{itemize}
 
 \bigskip
