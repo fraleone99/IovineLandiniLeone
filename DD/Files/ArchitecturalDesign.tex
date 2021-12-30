@@ -41,6 +41,28 @@ route the browser requests to the application server and send back its responses
         This module handles all the security issues.
 \end{itemize}
 
+\newpage
+\subsection{Deployment diagram}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/DeploymentDiagram.png}
+        \caption{Deployment Diagram}
+    \end{center}
+\end{figure}
+
+The deployment diagram in figure shows the needed components for correct system behavior.
+Each device owns its Operating System where the software runs. Firewall ensures application security.
+\newline The tiers in the image are the following:
+\begin{itemize}
+    \item \textbf{Tier 1:} it is the client machine, which can be a computer with a web browser or the mobile
+    application.
+    \item \textbf{Tier 2:} includes the replicated web servers, which do not execute any business logic, but simply receive
+    requests from the client, route them to the application servers and serve an HTML back to the client.
+    \item \textbf{Tier 3:} it includes the application servers that contain the whole application layer and communicate to the data tier.
+    \item \textbf{Tier 4:} it contains the DBMS servers that store and manage data, according to the instructions given by the application servers.
+\end{itemize}
+
+\newpage
 \subsection{Logical Description of Data}
 \begin{figure}[H]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/erDiagram.png}
