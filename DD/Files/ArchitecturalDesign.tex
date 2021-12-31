@@ -1,4 +1,14 @@
 \subsection{Overview}
+The system paradigm is client-server. In particular, there is a thin client and a fat server. 
+The client contains only a presentation layer. 
+The server, instead, contains both the business application logic and the data management logic. 
+The system paradigm is client-server. In particular, there is a thin client and a fat server. The client contains only a presentation layer. The server, instead, contains both the business application logic and the data management logic. 
+The layer of the application are:
+\begin{itemize}
+    \item \textbf{Presentation Layer:} it manages the presentation logic and all the interactions with the user.
+    \item \textbf{Application Layer:} it manages all the functionalities of the system.
+    \item \textbf{Data Layer:} it manages the access and the storage of data.
+\end{itemize}
 \subsection{Component View}
 \begin{figure}[H]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/ComponentDiagram.png}
