@@ -84,9 +84,27 @@ Each device owns its Operating System where the software runs. Firewall ensures 
 \end{itemize}
 
 \newpage
+
+\subsection{Component Interfaces}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/InterfaceDiagram.png}
+    \caption{Interface Diagram}
+    \label{fig:interface_diagram}
+\end{figure}
+Figure \ref{fig:interface_diagram} shows the main interfaces of the system.\newline
+The \textbf{UserInterface} provides the functionalities common to all users, it is realized through just one controller the \textbf{UserController}. \newline
+The \textbf{FarmerInterface} provides all the specific functionalities of the farmer and it is realized through three controllers: \textbf{UserController}, \textbf{ForumController}, \textbf{FarmerSuggestion}.\newline
+The \textbf{AgronomistInterface} provides all the specific functionalities of the agronomist and it is realized through four controllers     :
+\textbf{UserController}, \textbf{ForumController}, \textbf{FarmerSuggestion},\textbf{CalendarController}.\newline
+The \textbf{PolicymakerInterface} provides all the specific functionalities of the policymaker and it is realized through one controller:
+\textbf{UserController}.\newline
+The \textbf{LoginInterface} provides all the functionalities for login and signup and it is realized through \textbf{UserController}.
+
+
 \subsection{Logical Description of Data}
 \begin{figure}[H]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/erDiagram.png}
     \caption{ER Diagram}
     \label{fig:er_diagram}
 \end{figure}
+Figure \ref{fig:er_diagram} shows a logical representation of the data that will be stored in the database of the system.
