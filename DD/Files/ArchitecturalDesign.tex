@@ -108,3 +108,49 @@ The \textbf{LoginInterface} provides all the functionalities for login and signu
     \label{fig:er_diagram}
 \end{figure}
 Figure \ref{fig:er_diagram} shows a logical representation of the data that will be stored in the database of the system.
+
+
+\bigskip
+\subsection{Architectural Style and Patterns}
+\subsubsection{Four-tiered architecture}
+We chose this architecture for many reasons:
+\begin{itemize}
+    \item \textbf{Flexibility:} all parts of the application can be updated independently.
+    \item \textbf{Load Distribution:} a 4-tier application enables replication in each tier: replicated application servers, through the exploitation of
+    a load balancer, guarantee the avoidance of requests bottlenecks.
+    \item \textbf{Scalability:} an application divided into several tiers allows developers to scale the architecture only for the most critical components.
+\end{itemize}
+
+\subsubsection{RESTful Architecture}
+The \textbf{RESTful architecture} is based on HTTP and adopted both on the mobile and web sides. It is stateless so the server doesn't know anything
+about the state of the client. \newline
+An interesting constraint of this architecture is the code on demand, which gives the possibility of sending code to the client, where it is
+executed locally. The application is intended to support \emph{client-side scripting}, which means that all requests and updates of the page are
+made on client-side.
+
+\subsubsection{Model View Controller (MVC)}
+\textbf{Model–view–controller (MVC)} is a software design pattern commonly used for developing user interfaces that divide the related program logic into three
+interconnected elements:
+\begin{itemize}
+    \item \textbf{Model:} it is the core component of the pattern. It is responsible for managing the data of the application. It receives user input from the controller.
+    \item \textbf{View:} renders a presentation of the model in a particular format.
+    \item \textbf{Controller:} accepts input and converts it to commands for the model or view.
+\end{itemize}
+
+\subsubsection{Publish-subscribe Architecture}
+\textbf{Publish–subscribe} is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called
+subscribers, but instead categorize published messages into classes without knowledge of which subscribers if any, there may be. Similarly, subscribers express interest
+in one or more classes and only receive messages that are of interest, without knowledge of which publishers, if any, there are. The application is intended to exploit the
+\emph{topic-based} message filtering in which messages are published to "topics" or named logical channels: subscribers will receive all messages published to the topics to which
+they subscribe, the publisher is responsible for defining the topics to which subscribers can subscribe.
+
+
+\bigskip
+\subsection{Other Design Decisions}
+\subsubsection{Scale-Out}
+As said before, the application is intended to be scaled out through the replication of nodes that are expected to generate bottlenecks. As shown in figure \ref{fig:architectue_diagram},
+this approach requires load balancers to redirect the requests to nodes with the lowest workload.
+
+\subsubsection{Thin client and Server}
+The web application will be the \emph{thin client}: that's because the application is intended to keep as low information as possible on the client-side. This means that all the business
+logic resides on the server, so a stable connection is required between the parts. The advantage of that is the low computational power required on the client-side.
