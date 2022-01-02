@@ -9,6 +9,17 @@ The layer of the application are:
     \item \textbf{Application Layer:} it manages all the functionalities of the system.
     \item \textbf{Data Layer:} it manages the access and the storage of data.
 \end{itemize}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/architectureDesignDiagram.png}
+    \caption{Architecture of the application}
+    \label{fig:architectue_diagram}
+\end{figure}
+
+As shown in figure \ref{fig:architectue_diagram} the application is divided into 3 layers and 4 tiers. Users can access the service
+both from a mobile app or web interface. The figure shows the division of the different layers. Since the application follows the 
+REST standard the servers are stateless. There will be a more precise description of the components in the following sections.
+
 \subsection{Component View}
 \begin{figure}[H]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/ComponentDiagram.png}
@@ -16,7 +27,7 @@ The layer of the application are:
     \label{fig:component_diagram}
 \end{figure}
 
-Figure \ref{fig:component_diagram}  represents in detail the layers described before. The web server has the funtion
+Figure \ref{fig:component_diagram}  represents in detail the layers described before. The web server has the function to
 route the browser requests to the application server and send back its responses.
 
 \begin{itemize}
