@@ -134,16 +134,19 @@ warning the User that a previous registration with these data doesn't exist.
 
 
 \newpage
-\subsubsection{Logout}
+\subsubsection{Insert Area}
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/LogoutDD.png}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/InsertAreaDD.png}
     \end{center}
 \end{figure}
 
-The user clicks on the "Settings" icon and after on the "Logout" button. \\
-The UserController asks the User if he is sure he wants to logout and after confirmation takes him to the login page.
+This sequence diagram represents an operation that could be done only by agronomists.\\
+After the user inserts the area he is responsible for, the UserController checks in the 
+DBMS if there is already a registered agronomist responsible for the same area that the User inserted.\\
+If there isn't a registered agronomist, the UserController inserts the area in the DBMS and sends a 200 
+response's status code to the User; otherwise sends a 400 response's status code to the User.
 
 
 \newpage
@@ -230,19 +233,21 @@ a 200 response's status code to the User; otherwise sends a 400 response's statu
 
 
 \newpage
-\subsubsection{Insert Area}
+\subsubsection{Reply Help Request}
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/InsertAreaDD.png}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/ReplyHelpRequestDD.png}
     \end{center}
 \end{figure}
 
 This sequence diagram represents an operation that could be done only by agronomists.\\
-After the user inserts the area he is responsible for, the UserController checks in the 
-DBMS if there is already a registered agronomist responsible for the same area that the User inserted.\\
-If there isn't a registered agronomist, the UserController inserts the area in the DBMS and sends a 200 
-response's status code to the User; otherwise sends a 400 response's status code to the User.
+After the user has clicked on the "Help Request" icon, the UserController queries the DBMS 
+all the help requests submitted to the agronomist and shows them to him.\\
+The user presses on a chat and enters his answer, which the UserController then inserts 
+in the DBMS and sends a 200 response's status code to the Agronomist.\\
+The UserController sends a 400 response's status code to the User only 
+if there aren't help requests in the DBMS thus showing an empty page.
 
 
 \newpage
@@ -259,7 +264,7 @@ After the User has entered the data concerning the crops of his farm, the UserCo
 inserts these data in the DBMS and sends a 200 response's status code to the Farmer.
 
 
-\newpage
+\bigskip
 \subsubsection{Insert Threshold}
 
 \begin{figure}[H]
@@ -291,21 +296,16 @@ Farmers can then find all their personalized suggestions by pressing the "Person
 
 
 \newpage
-\subsubsection{Reply Help Request}
+\subsubsection{Logout}
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/ReplyHelpRequestDD.png}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/LogoutDD.png}
     \end{center}
 \end{figure}
 
-This sequence diagram represents an operation that could be done only by agronomists.\\
-After the user has clicked on the "Help Request" icon, the UserController queries the DBMS 
-all the help requests submitted to the agronomist and shows them to him.\\
-The user presses on a chat and enters his answer, which the UserController then inserts 
-in the DBMS and sends a 200 response's status code to the Agronomist.\\
-The UserController sends a 400 response's status code to the User only 
-if there aren't help requests in the DBMS thus showing an empty page.
+The user clicks on the "Settings" icon and after on the "Logout" button. \\
+The UserController asks the User if he is sure he wants to logout and after confirmation takes him to the login page.
 
 
 \newpage
