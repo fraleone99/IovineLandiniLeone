@@ -85,6 +85,231 @@ Each device owns its Operating System where the software runs. Firewall ensures 
 
 \newpage
 
+\subsection{Runtime View}
+The following sequence diagrams represent the runtime view, for every possible operation in DREAM, 
+from the mobile app's perspective (for agronomists and farmers) and the web browser's perspective (for policymakers).\\
+Every interface use REST API through HTTP GET and POST.
+
+\subsubsection{Sign Up}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/SignupDD.png}
+    \end{center}
+\end{figure}
+
+This diagram represents the process of signing up a user through two possible situations: 
+\begin{itemize}
+    \item User is already registered;
+    \item User isn't already registered.
+\end{itemize}
+After the User inserts his credentials and the data are transmitted to the database, 
+they are analyzed and we will have the two separate ways.\\
+If these credentials are already present in the database, the UserController 
+sends a 500 response's status code, warning the User that a previous registration with these data exists.\\
+Otherwise, if the credentials aren't present in the DBMS, the UserController inserts the User 
+into the database and sends a 200 response's status code, informing the User that the registration was successful.
+
+
+\newpage
+\subsubsection{Login}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/LoginDD.png}
+    \end{center}
+\end{figure}
+
+This diagram represents the process of login of a User and has the same two ways as the process of signing up:
+\begin{itemize}
+    \item User is already registered;
+    \item User isn't already registered.
+\end{itemize}
+After the user enters his credentials and these are analyzed by the database, 
+the two paths are opposite with respect to the registration case.\\
+If the user is already present in the database, the UserController sends a 
+200 response's status and the User is taken to the homepage.\\
+If the user is not already present in the database, the UserController sends 403 responses's status, 
+warning the User that a previous registration with these data doesn't exist.
+
+
+\newpage
+\subsubsection{Logout}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/LogoutDD.png}
+    \end{center}
+\end{figure}
+
+The user clicks on the "Settings" icon and after on the "Logout" button. \\
+The UserController asks the User if he is sure he wants to logout and after confirmation takes him to the login page.
+
+
+\newpage
+\subsubsection{Add appointment}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/AddAppointmentDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram shows the steps that an agronomist has to do for adding an appointment.\\
+After checking the daily plan, the agronomist can press on "ADD" button and specify the farm and the date 
+of the appointment that he wants to make.\\
+The CalendarController query the DBMS to check if the selected date is available and here we have two different ways.\\
+If the date is available, the CalendarController adds the appointment in the DBMS and sends a 200 response's status code to the User;
+otherwise, the CalendarController sends a 400 response's status code to the User.
+
+
+\newpage
+\subsubsection{Answer on the Forum}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/AnswerForumDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents an operation that could be done by an agronomist or a farmer.\\
+The User has to press on a discussion and insert his answer. After that, the ForumController inserts the answer in the DBMS
+and sends a 200 response's status code to the User.\\
+The ForumController sends a 400 response's status code to the User only if there isn't an open discussion thus showing an empty page.
+
+
+\newpage
+\subsubsection{Check Dashboard}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/CheckDashboardDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents an operation that could be done by agronomists and policymakers. 
+The only difference between the operation done by these two different users is that the policymakers can check the dashboard 
+of all farms, while the agronomists can check only the dashboard about the farms of the area that he is responsible for.\\
+After retrieving the data from the DBMS, the UserController sends a 200 response's status code to the User and shows him the dashboard. 
+The User can then reorganize the data according to one of the fields on the dashboard.\\
+The UserController sends a 400 response's status code to the User only 
+if there isn't data about farms in the DBMS thus showing an empty page.
+
+
+\newpage
+\subsubsection{Check Weather Forecasts}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/CheckWeatherForecastsDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents an operation that could be done by agronomists and farmers.\\
+On the Weather Forecasts page, the User has to specify the area for which he wants to know the weather forecast.\\
+After that, the UserController query the OpenWeatherAPI and, if the inserted area exists, 
+the Controller sends a 200 response's status code to the User and shows him the weather forecast.\\
+In case of the inserted area doesn't exist, the OpenWeatherAPI responds to the request 
+with "false" and the UserController sends a 500 response's status code to the User.
+
+
+\newpage
+\subsubsection{Help Request}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/HelpRequestDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents how the privately help requests by farmers occur.\\
+After the farmer describes his problem, the UserController checks in the DBMS if there 
+is a registered agronomist responsible for the same area where the User's farm is located.\\
+If there is a registered agronomist, the UserController inserts the help request in the DBMS and sends 
+a 200 response's status code to the User; otherwise sends a 400 response's status code to the User.
+
+
+\newpage
+\subsubsection{Insert Area}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/InsertAreaDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents an operation that could be done only by agronomists.\\
+After the user inserts the area he is responsible for, the UserController checks in the 
+DBMS if there is already a registered agronomist responsible for the same area that the User inserted.\\
+If there isn't a registered agronomist, the UserController inserts the area in the DBMS and sends a 200 
+response's status code to the User; otherwise sends a 400 response's status code to the User.
+
+
+\newpage
+\subsubsection{Insert Data}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/InsertDataDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents an operation that could be done only by farmers.\\
+After the User has entered the data concerning the crops of his farm, the UserController 
+inserts these data in the DBMS and sends a 200 response's status code to the Farmer.
+
+
+\newpage
+\subsubsection{Insert Threshold}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/InsertThresholdDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents the operation of inserting a threshold by agronomists.\\
+From the Dashboard page, the Agronomist presses the "Insert Threshold" button and then inserts the threshold he deems appropriate.\\
+After that, the UserController inserts the threshold in the DBMS and sends a 200 response's status to the Agronomist.
+
+
+\newpage
+\subsubsection{Personalized Suggestions}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/Publish-SubscribeDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents how the forwarding of personalized suggestions to farmers works.\\
+After having completed the operation of entering data concerning the crops, the UserController contacts 
+the FarmerSuggestion to automatically subscribe the User to receive suggestions on how to improve their production.\\
+Then when an agronomist inserts a suggestion through the FarmerSuggestion, the latter will 
+forward the suggestion to all the farmers who had been subscribed.\\
+Farmers can then find all their personalized suggestions by pressing the "Personalized Suggestions" button on the Weather Forecasts Page.
+
+
+\newpage
+\subsubsection{Reply Help Request}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Images/SequenceDiagrams/ReplyHelpRequestDD.png}
+    \end{center}
+\end{figure}
+
+This sequence diagram represents an operation that could be done only by agronomists.\\
+After the user has clicked on the "Help Request" icon, the UserController queries the DBMS 
+all the help requests submitted to the agronomist and shows them to him.\\
+The user presses on a chat and enters his answer, which the UserController then inserts 
+in the DBMS and sends a 200 response's status code to the Agronomist.\\
+The UserController sends a 400 response's status code to the User only 
+if there aren't help requests in the DBMS thus showing an empty page.
+
+
+\newpage
+
 \subsection{Component Interfaces}
 \begin{figure}[H]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/InterfaceDiagram.png}
