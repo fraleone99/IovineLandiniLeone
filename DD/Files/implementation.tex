@@ -1,0 +1,36 @@
+\subsection{Recommended Implementation}
+The system will be composed by:
+\begin{itemize}
+    \item Client : it can be a mobile or a web application
+    \item Web Server
+    \item Application Server
+    \item Database
+    \item External APIs (such as OpenWeather and OpenStreetMap)
+\end{itemize}
+
+\subsection{Implementation Plan}
+The above components should be developed following a bottom-up logic, therefore, avoiding difficulties in integration and testing.\bigskip
+
+Firstly some basic functionalities should be completely developed so that the other related functionalities can then be added and tested.\newline
+The first module that should be written is the one that provides authentication and account creation interfacing with the DBMS. 
+Because of that, the system can soon reach partial functionality.\newline 
+Then can be developed the web application using the REST API which includes all the main functionalities of the users.
+The next steps to complete the system should be:
+\begin{itemize}
+    \item The client interfaces
+    \item The coupling with external APIs
+\end{itemize}
+
+\subsection{Testing Plan}
+Testing should be done throughout all stages of development, following a bottom up approach.\bigskip
+
+Unit tests should be written starting from the basic component so that tests for other components that
+use them can be written relying on the fact that the subcomponents are already tested. This speeds up
+debugging since it’s easy to locate at which level of the component hierarchy there is a problem.
+
+\subsection{Integration Plan}
+In this section there is be a description about how the components are integrated and communicate.
+The first component to build is the DBMS, followed by the main application components that exploit it.
+After this, we have to integrate the API communication between the System and the external services that will be used.
+t this point it is possible to integrate the User Manager, which permits to Users to exploit all the functionalities.
+Finally, it is possible to integrate the web server module with the mobile application module and the browser with the web server module.

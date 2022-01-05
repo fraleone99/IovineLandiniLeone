@@ -1,54 +1,94 @@
-This section will show the traceability between requirements and modules described in component diagram.
+This section will show the traceability between requirements and modules described in component diagram.\newline
 In the table some abbreviation have been used:\newline
 \begin{itemize}
     \item UM: UserManager
     \item FM: ForumManager
     \item CM: CalendarManager
     \item FS: FarmerSuggestion
-    \item FAM: FarmManager
     \item MS: MeteoService
 \end{itemize}
+\bigskip
+This is the list of requirements:
+\begin{description}
+    \item[R1] The system shall keep track of the farmer who requested help and of the suggestion that they received
+    \item[R2] The system shall keep track of historical data for each zone
+    \item[R3] The system shall keep track of meteorological events
+    \item[R4] Farmers shall be able to create a help request for the agronomist specifying the type of problem 
+    \item[R5] The system shall be able to record data about production inserted by the farmer
+    \item[R6] Agronomist shall be able to insert significant prodution thresholds for each zone
+    \item[R7] Farmers shall be able to create discussion threads on the forum 
+    \item[R8] Farmers shall be able to reply to discussion on the forum
+    \item[R9] The system shall send a notification to the Agronomists when a farmer has requested help
+    \item[R10] After an agronomist has registered a best practice or a suggestion to a farmer, the system should infer the farmers with similar characteristics and send them the same suggestion
+    \item[R11] The systems shall be able to connect to an external service to retrieve meteorological forecasts
+    \item[R12] The system shall give Farmers the possibility to see weather forecasts           
+    \item[R13] The system shall be able to manage a forum
+    \item[R14] The system shall be able to record data about visits of agronomists
+    \item[R15] The system shall be able to manage a calendar
+    \item[R16] The system shall organize Agronomists' calendar in such a way that they visit each farm at least twice a year
+    \item[R17] The system shall give Farmers the possibility to register
+    \item[R18] The system shall give Farmers the possibility to login
+    \item[R19] The system shall give the Farmers the possibilty to visualize personalized suggestion
+    \item[R20] Agronomists shall be able to reply to discussion on the forum
+    \item[R21] The system shall give Agronomists the possibility to see weather forecasts
+    \item[R22] Agronomists shall be able to add or remove an appointment from daily plan
+    \item[R23] At the end of each day Agronomists shall be able to confirm or communicate deviations from the daily plan
+    \item[R24] The system shall give Agronomists the possibility to register
+    \item[R25] The system shall give Agronomists the possibility to login
+    \item[R26] Agronomists shall be able to visualize farmers' performance through the dashboard
+    \item[R27] Agronomists shall be able to insert best practices discovered during inspections
+    \item[R28] Agronomists shall be able to visualize disussion on the forum
+    \item[R29] The system shall be able to keep track of all the areas and the agronomist responsible for them
+    \item[R30] The system shall give Agronomists the possibility to know every farmer for which he is responsible
+    \item[R31] The system shall be able to localize and keep track of each farm  
+    \item[R32] The system shall give Policymakers the possibility to register 
+    \item[R33] The system shall give Policymakers the possibility to login
+    \item[R34] Policymaker shall be able to visualize farmers' performance through the dashboard
+    \item[R35] Policymaker shall be able to visulize data inserted by farmers and agronomists
+    \item[R36] Policymaker shall be able to visualize comparative performance of the farmers who received help
+    \item[R37] The system shall give policymakers the ability to identify well-performing and underperforming farmers    
+\end{description}
 
 \begin{table}[]
-    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \begin{tabular}{|l|l|l|l|l|l|l|}
     \hline
-        & UM & FM & CM & FS & FAM & MS & DBMS \\ \hline
-    R1  & X  &    &    & X  &     &    & X    \\ \hline
-    R2  &    &    &    &    & X   & X  & X    \\ \hline
-    R3  &    &    &    &    &     & X  & X    \\ \hline
-    R4  & X  &    &    &    &     &    & X    \\ \hline
-    R5  & X  &    &    &    & X   &    & X    \\ \hline
-    R6  & X  &    &    & X  &     &    & X    \\ \hline
-    R7  & X  & X  &    &    &     &    & X    \\ \hline
-    R8  & X  & X  &    &    &     &    & X    \\ \hline
-    R9  & X  &    &    &    &     &    & X    \\ \hline
-    R10 & X  &    &    & X  &     &    & X    \\ \hline
-    R11 &    &    &    &    &     & X  & X    \\ \hline
-    R12 & X  &    &    &    &     & X  & X    \\ \hline
-    R13 &    & X  &    &    &     &    & X    \\ \hline
-    R14 & X  &    & X  &    & X   &    & X    \\ \hline
-    R15 & X  &    & X  &    &     &    & X    \\ \hline
-    R16 &    &    & X  &    &     &    &      \\ \hline
-    R17 & X  &    &    &    &     &    & X    \\ \hline
-    R18 & X  &    &    &    &     &    & X    \\ \hline
-    R19 & X  &    &    & X  &     &    & X    \\ \hline
-    R20 & X  & X  &    &    &     &    & X    \\ \hline
-    R21 & X  &    &    &    &     & X  & X    \\ \hline
-    R22 & X  &    & X  &    &     &    & X    \\ \hline
-    R23 & X  &    & X  &    &     &    &      \\ \hline
-    R24 & X  &    &    &    &     &    & X    \\ \hline
-    R25 & X  &    &    &    &     &    & X    \\ \hline
-    R26 & X  &    &    &    &     &    & X    \\ \hline
-    R27 & X  &    &    & X  &     &    & X    \\ \hline
-    R28 & X  & X  &    &    &     &    & X    \\ \hline
-    R29 &    &    &    &    & X   &    & X    \\ \hline
-    R30 &    &    &    &    & X   &    & X    \\ \hline
-    R31 &    &    &    &    & X   &    & X    \\ \hline
-    R32 & X  &    &    &    &     &    & X    \\ \hline
-    R33 & X  &    &    &    &     &    & X    \\ \hline
-    R34 & X  &    &    &    &     &    & X    \\ \hline
-    R35 & X  &    &    &    &     &    & X    \\ \hline
-    R36 & X  &    &    &    &     &    & X    \\ \hline
-    R37 & X  &    &    &    &     &    & X    \\ \hline
+        & UM & FM & CM & FS & MS & DBMS \\ \hline
+    R1  & X  &    &    & X  &    & X    \\ \hline
+    R2  &    &    &    &    & X  & X    \\ \hline
+    R3  &    &    &    &    & X  & X    \\ \hline
+    R4  & X  &    &    &    &    & X    \\ \hline
+    R5  & X  &    &    &    &    & X    \\ \hline
+    R6  & X  &    &    &    &    & X    \\ \hline
+    R7  & X  & X  &    &    &    & X    \\ \hline
+    R8  & X  & X  &    &    &    & X    \\ \hline
+    R9  & X  &    &    &    &    & X    \\ \hline
+    R10 & X  &    &    & X  &    & X    \\ \hline
+    R11 & X  &    &    &    & X  &      \\ \hline
+    R12 & X  &    &    &    & X  &      \\ \hline
+    R13 &    & X  &    &    &    & X    \\ \hline
+    R14 & X  &    & X  &    &    & X    \\ \hline
+    R15 & X  &    & X  &    &    & X    \\ \hline
+    R16 &    &    & X  &    &    & X    \\ \hline
+    R17 & X  &    &    &    &    & X    \\ \hline
+    R18 & X  &    &    &    &    & X    \\ \hline
+    R19 & X  &    &    & X  &    & X    \\ \hline
+    R20 & X  & X  &    &    &    & X    \\ \hline
+    R21 & X  &    &    &    & X  &      \\ \hline
+    R22 & X  &    & X  &    &    & X    \\ \hline
+    R23 & X  &    & X  &    &    & X    \\ \hline
+    R24 & X  &    &    &    &    & X    \\ \hline
+    R25 & X  &    &    &    &    & X    \\ \hline
+    R26 & X  &    &    &    &    & X    \\ \hline
+    R27 & X  &    &    & X  &    & X    \\ \hline
+    R28 & X  & X  &    &    &    & X    \\ \hline
+    R29 &    &    &    &    &    & X    \\ \hline
+    R30 &    &    &    &    &    & X    \\ \hline
+    R31 &    &    &    &    &    & X    \\ \hline
+    R32 & X  &    &    &    &    & X    \\ \hline
+    R33 & X  &    &    &    &    & X    \\ \hline
+    R34 & X  &    &    &    &    & X    \\ \hline
+    R35 & X  &    &    &    &    & X    \\ \hline
+    R36 & X  &    &    &    &    & X    \\ \hline
+    R37 & X  &    &    &    &    & X    \\ \hline
     \end{tabular}
     \end{table}

@@ -2,7 +2,6 @@
 The system paradigm is client-server. In particular, there is a thin client and a fat server. 
 The client contains only a presentation layer. 
 The server, instead, contains both the business application logic and the data management logic. 
-The system paradigm is client-server. In particular, there is a thin client and a fat server. The client contains only a presentation layer. The server, instead, contains both the business application logic and the data management logic. 
 The layer of the application are:
 \begin{itemize}
     \item \textbf{Presentation Layer:} it manages the presentation logic and all the interactions with the user.
@@ -20,6 +19,7 @@ As shown in figure \ref{fig:architectue_diagram} the application is divided into
 both from a mobile app or web interface. The figure shows the division of the different layers. Since the application follows the 
 REST standard the servers are stateless. There will be a more precise description of the components in the following sections.
 
+\newpage
 \subsection{Component View}
 \begin{figure}[H]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Images/ComponentDiagram.png}
@@ -35,7 +35,7 @@ route the browser requests to the application server and send back its responses
         This module handles all the requests made by the client. In the beginning,
         when the client is not logged in, the module offers (through
         the user manager) a loginInterface that allows the client to register and log in. After the login the module
-        provide an interface based on the role of the user: FarmInterface for the farmer, AgronomistInterface for the agronomist,
+        provide an interface based on the role of the user: FarmerInterface for the farmer, AgronomistInterface for the agronomist,
         PolicymakerInterface for the policymaker.
 
     \item \textbf{User Manager}\\
@@ -53,10 +53,6 @@ route the browser requests to the application server and send back its responses
 
     \item \textbf{Farmer Suggestion}\\
         This module handles the creation and delivery of personalized suggestions to the Farmer. 
-
-    \item \textbf{Farm Manager}\\
-        This module provides to the Farmer all the functionalities for giving information about their farm. 
-        It provides the possibility to add information about the harvest and to request help from the Agronomist.
 
     \item \textbf{Security Manager}\\
         This module handles all the security issues.
@@ -86,7 +82,7 @@ Each device owns its Operating System where the software runs. Firewall ensures 
 \newpage
 
 \subsection{Runtime View}
-The following sequence diagrams represent the runtime view, for every possible operation in DREAM, 
+The following sequence diagrams represent the runtime view, for the most relevant operations in DREAM, 
 from the mobile app's perspective (for agronomists and farmers) and the web browser's perspective (for policymakers).\\
 Every interface use REST API through HTTP GET and POST.
 
@@ -192,7 +188,7 @@ The ForumController sends a 400 response's status code to the User only if there
 
 This sequence diagram represents an operation that could be done by agronomists and policymakers. 
 The only difference between the operation done by these two different users is that the policymakers can check the dashboard 
-of all farms, while the agronomists can check only the dashboard about the farms of the area that he is responsible for.\\
+of all farms, while the agronomists can check only the dashboard about the farms of the area that they are responsible for.\\
 After retrieving the data from the DBMS, the UserController sends a 200 response's status code to the User and shows him the dashboard. 
 The User can then reorganize the data according to one of the fields on the dashboard.\\
 The UserController sends a 400 response's status code to the User only 
@@ -225,7 +221,7 @@ with "false" and the UserController sends a 500 response's status code to the Us
     \end{center}
 \end{figure}
 
-This sequence diagram represents how the privately help requests by farmers occur.\\
+This sequence diagram represents how the private help requests by farmers occur.\\
 After the farmer describes his problem, the UserController checks in the DBMS if there 
 is a registered agronomist responsible for the same area where the User's farm is located.\\
 If there is a registered agronomist, the UserController inserts the help request in the DBMS and sends 
@@ -275,7 +271,7 @@ inserts these data in the DBMS and sends a 200 response's status code to the Far
 
 This sequence diagram represents the operation of inserting a threshold by agronomists.\\
 From the Dashboard page, the Agronomist presses the "Insert Threshold" button and then inserts the threshold he deems appropriate.\\
-After that, the UserController inserts the threshold in the DBMS and sends a 200 response's status to the Agronomist.
+After that, the UserController inserts the threshold in the DBMS and sends a 200 response's status code to the Agronomist.
 
 
 \newpage
@@ -291,7 +287,7 @@ This sequence diagram represents how the forwarding of personalized suggestions 
 After having completed the operation of entering data concerning the crops, the UserController contacts 
 the FarmerSuggestion to automatically subscribe the User to receive suggestions on how to improve their production.\\
 Then when an agronomist inserts a suggestion through the FarmerSuggestion, the latter will 
-forward the suggestion to all the farmers who had been subscribed.\\
+forward the suggestion to all the farmers who had been subscribed. (Some steps of this operation have been omitted from the sequence diagram to avoid repetition).\\
 Farmers can then find all their personalized suggestions by pressing the "Personalized Suggestions" button on the Weather Forecasts Page.
 
 
@@ -376,6 +372,6 @@ they subscribe, the publisher is responsible for defining the topics to which su
 As said before, the application is intended to be scaled out through the replication of nodes that are expected to generate bottlenecks. As shown in figure \ref{fig:architectue_diagram},
 this approach requires load balancers to redirect the requests to nodes with the lowest workload.
 
-\subsubsection{Thin client and Server}
+\subsubsection{Thin Client and Fat Server}
 The web application will be the \emph{thin client}: that's because the application is intended to keep as low information as possible on the client-side. This means that all the business
 logic resides on the server, so a stable connection is required between the parts. The advantage of that is the low computational power required on the client-side.
