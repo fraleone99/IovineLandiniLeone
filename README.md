@@ -6,7 +6,7 @@ at Politecnico di Milano. (2021/2022)
 
 **Teacher** Matteo Giovanni Rossi
 
-##Application Overview
+## Application Overview
 
 Agriculture has a key role in India's economy and covid-19 pandemic has highlighted the need of building a resilient food system.
 
@@ -22,7 +22,7 @@ The application aims to enable the acquisition, communication and combination of
 * soil humidity
 * agronomists' report
 
-##Documents
+## Documents
 
 The final version includes:
 * [Requirement Analysis and Specification Document (RASD)](https://github.com/fraleone99/IovineLandiniLeone/blob/main/DeliveryFolder/RASD1.pdf)
@@ -30,7 +30,7 @@ The final version includes:
 
 You can find the full specification [here](https://github.com/fraleone99/IovineLandiniLeone/tree/main/Specs)
 
-##Tools
+## Tools
 * LaTeX - Visual Studio Code, IntelliJ
 * Mockups - Balsamiq Wireframes
 * Flow Chart - draw.io
