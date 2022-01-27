@@ -1,7 +1,7 @@
 
 # Software Engineering 2 project
 
-DREAM is the project of **Software Engineering 2** course held
+DREAM - Data-dRiven PrEdictive FArMing is the project of **Software Engineering 2** course held
 at Politecnico di Milano. (2021/2022)  
 
 **Teacher** Matteo Giovanni Rossi
@@ -32,9 +32,11 @@ You can find the full specification [here](https://github.com/fraleone99/IovineL
 
 ## Tools
 * LaTeX - Visual Studio Code, IntelliJ
+* Alloy - Alloy Analyzer
 * Mockups - Balsamiq Wireframes
 * Flow Chart - draw.io
 * Sequence diagrams, UML diagrams - AstahUML
+* ER diagram - GitMind
 
 
 ## Authors
